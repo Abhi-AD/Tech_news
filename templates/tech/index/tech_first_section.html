@@ -1,0 +1,48 @@
+{% load static %}
+
+{% block content %}
+<section class="section first-section">
+    <div class="container-fluid">
+        <div class="masonry-blog clearfix">
+            {% if featured_posts %}
+            <div class="first-slot">
+                <div class="masonry-box post-media">
+                    <img src="{{ featured_posts.feature_image.url }}" alt="{{ featured_posts.title }}" class="img-fluid">
+                    <div class="shadoweffect">
+                        <div class="shadow-desc">
+                            <div class="blog-meta">
+                                <span class="bg-orange"><a href="tech-category-01.html" title="">{{ featured_posts.category.name }}</a></span>
+                                <h4><a href="tech-single.html" title="">{{ featured_posts.title }}</a></h4>
+                                <small><a href="tech-single.html" title="">{{ featured_posts.published_at|date:'d F, Y' }}</a></small>
+                                <small><a href="tech-author.html" title="">{{ featured_posts.author }}</a></small>
+                            </div><!-- end meta -->
+                        </div><!-- end shadow-desc -->
+                    </div><!-- end shadow -->
+                </div><!-- end post-media -->
+            </div><!-- end first-side -->
+            {% endif %}
+
+            {% for post in sections %}
+            <div class="second-slot">
+                <div class="masonry-box post-media">
+                    <img src="{{ post.feature_image.url }}" alt="{{ post.title }}" class="img-fluid">
+                    <div class="shadoweffect">
+                        <div class="shadow-desc">
+                            <div class="blog-meta">
+                                <span class="bg-orange"><a href="tech-category-01.html" title="">{{ post.category.name }}</a></span>
+                                <h4><a href="tech-single.html" title="">{{ post.title }}</a></h4>
+                                <small><a href="tech-single.html" title="">{{ post.published_at|date:'d F, Y' }}</a></small>
+                                <small><a href="tech-author.html" title="">{{ post.author }}</a></small>
+                            </div><!-- end meta -->
+                        </div><!-- end shadow-desc -->
+                    </div><!-- end shadow -->
+                </div><!-- end post-media -->
+            </div><!-- end second-side -->
+            {% endfor %}
+
+            <!-- Add the last-slot section if you want to display another post -->
+
+        </div><!-- end masonry -->
+    </div>
+</section>
+{% endblock %}
