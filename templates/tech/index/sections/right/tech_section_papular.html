@@ -1,0 +1,15 @@
+<div class="widget">
+     <h2 class="widget-title">Popular Posts</h2>
+     <div class="blog-list-widget">
+         <div class="list-group">
+            {% for recent_post in recent_posts %}
+             <a href="tech-single.html" class="list-group-item list-group-item-action flex-column align-items-start">
+                 <div class="w-100 justify-content-between">
+                     <img src="{{recent_post.feature_image.url}}" alt="{{recent_post.title}}" class="img-fluid float-left">
+                     <h5 class="mb-1">{{recent_post.title |truncatechars:20}}</h5>
+                     <small>{{recent_post.published_at|date:"D, d M, Y"}}</small>
+                 </div>
+             </a>
+             {% endfor %}
+     </div><!-- end blog-list -->
+ </div><!-- end widget -->

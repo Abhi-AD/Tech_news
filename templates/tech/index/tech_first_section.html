@@ -4,24 +4,23 @@
 <section class="section first-section">
     <div class="container-fluid">
         <div class="masonry-blog clearfix">
-            {% if featured_posts %}
             <div class="first-slot">
                 <div class="masonry-box post-media">
-                    <img src="{{ featured_posts.feature_image.url }}" alt="{{ featured_posts.title }}" class="img-fluid">
+                    <img src="{{ section.feature_image.url }}" alt="{{ section.title }}" class="img-fluid">
                     <div class="shadoweffect">
                         <div class="shadow-desc">
                             <div class="blog-meta">
-                                <span class="bg-orange"><a href="tech-category-01.html" title="">{{ featured_posts.category.name }}</a></span>
-                                <h4><a href="tech-single.html" title="">{{ featured_posts.title }}</a></h4>
-                                <small><a href="tech-single.html" title="">{{ featured_posts.published_at|date:'d F, Y' }}</a></small>
-                                <small><a href="tech-author.html" title="">{{ featured_posts.author }}</a></small>
+                                <span class="bg-orange"><a href="tech-category-01.html" title="">{{ section.category.name }}</a></span>
+                                <h4><a href="tech-single.html" title="">{{ section.title }}</a></h4>
+                                <small><a href="tech-single.html" title="">{{ section.published_at|date:'d F, Y' }}</a></small>
+                                <small><a href="tech-author.html" title="">{{ section.author }}</a></small>
                             </div><!-- end meta -->
                         </div><!-- end shadow-desc -->
                     </div><!-- end shadow -->
                 </div><!-- end post-media -->
             </div><!-- end first-side -->
-            {% endif %}
 
+            
             {% for post in sections %}
             <div class="second-slot">
                 <div class="masonry-box post-media">

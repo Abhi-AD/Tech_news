@@ -1,0 +1,33 @@
+{% load static %}
+<div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+     <div class="page-wrapper">
+          <div class="blog-top clearfix">
+               <h4 class="pull-left">Recent News <a href="#"><i class="fa fa-rss"></i></a></h4>
+          </div><!-- end blog-top -->
+
+          {% for recent_post in recent_posts %}
+          <div class="blog-box row">
+               <div class="col-md-4">
+                    <div class="post-media">
+                         <a href="tech-single.html" title="">
+                              <img src="{{recent_post.feature_image.url}}" alt="{{recent_post.title}}" class="img-fluid">
+                              <div class="hovereffect"></div>
+                         </a>
+                    </div><!-- end media -->
+               </div><!-- end col -->
+
+               <div class="blog-meta big-meta col-md-8">
+                    <h4><a href="tech-single.html" title="">{{recent_post.title |truncatechars:100}}</a></h4>
+                    <p>{{recent_post.content}}</p>
+                    <small class="firstsmall"><a class="bg-orange" href="tech-category-01.html"
+                              title="">{{recent_post.category.name}}</a></small>
+                    <small><a href="tech-single.html" title="">{{recent_post.published_at|date:"D, d M, Y"}}</a></small>
+                    <small><a href="tech-author.html" title="">{{recent_post.author.username}}</a></small>
+                    <small><a href="tech-single.html" title=""><i class="fa fa-eye"></i> {{recent_post.views_count}}</a></small>
+               </div><!-- end meta -->
+          </div><!-- end blog-box -->
+          {% endfor%}
+
+          <hr class="invis">
+     </div>
+</div>

@@ -5,11 +5,11 @@
              <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                  <span class="navbar-toggler-icon"></span>
              </button>
-             <a class="navbar-brand" href="tech-index.html"><img src="{% static 'tech/images/version/tech-logo.png' %}" alt=""></a>
+             <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'tech/images/version/tech-logo.png' %}" alt=""></a>
              <div class="collapse navbar-collapse" id="navbarCollapse">
                  <ul class="navbar-nav mr-auto">
                      <li class="nav-item">
-                         <a class="nav-link" href="tech-index.html">Home</a>
+                         <a class="nav-link" href="{% url 'home' %}">Home</a>
                      </li>
                      <li class="nav-item dropdown has-submenu menu-large hidden-md-down hidden-sm-down hidden-xs-down">
                          <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">News</a>
@@ -377,7 +377,7 @@
                          <a class="nav-link" href="tech-category-03.html">Reviews</a>
                      </li>
                      <li class="nav-item">
-                         <a class="nav-link" href="tech-contact.html">Contact Us</a>
+                         <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
                      </li>
                  </ul>
                  <ul class="navbar-nav mr-2">

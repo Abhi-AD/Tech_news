@@ -1,0 +1,24 @@
+{% load static %}
+<div class="widget">
+     <h2 class="widget-title">Recent Reviews</h2>
+     <div class="blog-list-widget">
+         <div class="list-group">
+            {% for reviews_post in reviews_posts %}
+             <a href="tech-single.html" class="list-group-item list-group-item-action flex-column align-items-start">
+                 <div class="w-100 justify-content-between">
+                     <img src="{{ reviews_post.image.url }}" alt="{{ reviews_post.title }}" class="img-fluid float-left">
+                     <h5 class="mb-1">{{reviews_post.title|truncatechars:20}}</h5>
+                     <span class="rating">
+                         <i class="fa fa-star"></i>
+                         <i class="fa fa-star"></i>
+                         <i class="fa fa-star"></i>
+                         <i class="fa fa-star"></i>
+                         <i class="fa fa-star"></i>
+                     </span>
+                 </div>
+             </a>
+             {% endfor %}
+
+         </div>
+     </div><!-- end blog-list -->
+ </div><!-- end widget -->
