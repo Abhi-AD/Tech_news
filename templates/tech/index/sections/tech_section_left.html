@@ -10,7 +10,7 @@
                <div class="col-md-4">
                     <div class="post-media">
                          <a href="tech-single.html" title="">
-                              <img src="{{recent_post.feature_image.url}}" alt="{{recent_post.title}}" class="img-fluid">
+                              <img src="{{recent_post.feature_image.url}}" alt="{{recent_post.title}}" height="180px">
                               <div class="hovereffect"></div>
                          </a>
                     </div><!-- end media -->
@@ -26,8 +26,7 @@
                     <small><a href="tech-single.html" title=""><i class="fa fa-eye"></i> {{recent_post.views_count}}</a></small>
                </div><!-- end meta -->
           </div><!-- end blog-box -->
-          {% endfor%}
-
           <hr class="invis">
+          {% endfor%}
      </div>
 </div>
